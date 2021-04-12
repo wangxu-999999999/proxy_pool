@@ -21,6 +21,7 @@ from domain import Proxy
     4.4 返回Proxy对象列表
 """
 
+
 # 1. 在base_spider.py文件中,定义一个BaseSpider类, 继承object
 class BaseSpider(object):
 
@@ -81,6 +82,7 @@ class BaseSpider(object):
             proxies = self.get_proxies_from_page(page)
             # 4.4 返回Proxy对象列表
             yield from proxies
+
 
 if __name__ == '__main__':
 

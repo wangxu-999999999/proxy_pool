@@ -29,6 +29,7 @@ from settings import PROXIES_MAX_COUNT
 4. 实现start的类方法, 用于通过类名, 启动服务
 """
 
+
 # 1. 在proxy_api.py中, 创建ProxyApi类
 class ProxyApi(object):
 
@@ -91,7 +92,6 @@ class ProxyApi(object):
             self.mongo_pool.disable_domain(ip, domain)
             return "{} 禁用域名 {} 成功".format(ip, domain)
 
-
     def run(self):
         """3. 实现run方法, 用于启动Flask的WEB服务"""
         self.app.run('0.0.0.0', port=16888)
@@ -101,6 +101,7 @@ class ProxyApi(object):
         # 4. 实现start的类方法, 用于通过类名, 启动服务
         proxy_api = cls()
         proxy_api.run()
+
 
 if __name__ == '__main__':
     # proxy_api = ProxyApi()

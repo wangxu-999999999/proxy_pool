@@ -19,9 +19,21 @@ from settings import MAX_SCORE
 3. 提供 __str__ 方法, 返回数据字符串
 """
 
+
 class Proxy(object):
 
-    def __init__(self, ip, port, protocol=-1, nick_type=-1, speed=-1, area=None, score=MAX_SCORE, disable_domains=[]):
+    HTTP = 0
+    HTTPS = 1
+    HTTP_ALL = 2
+
+    TRANSPARENT = 0
+    ANONYMOUS = 1
+    HIGH_ANONYMOUS = 2
+
+    INVALID = -1
+
+    def __init__(self, ip, port, protocol=INVALID, nick_type=INVALID,
+                 speed=INVALID, area=None, score=MAX_SCORE, disable_domains=None):
         # ip: 代理的IP地址
         self.ip = ip
         # port: 代理IP的端口号

@@ -48,6 +48,7 @@ USER_AGENTS = [
     "Mozilla/5.0 (X11; U; Linux x86_64; zh-CN; rv:1.9.2.10) Gecko/20100922 Ubuntu/10.10 (maverick) Firefox/3.6.10"
 ]
 
+
 # 实现一个方法, 获取随机User-Agent的请求头
 def get_request_headers():
     headers = {
@@ -59,6 +60,7 @@ def get_request_headers():
     }
 
     return headers
+
 
 if __name__ == '__main__':
     print(get_request_headers())

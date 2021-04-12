@@ -34,6 +34,7 @@ from settings import MAX_SCORE, TEST_PROXIES_ASYNC_COUNT, TEST_PROXIES_INTERVAL
             4.2.3 每间隔一定时间, 执行一下, run方法  
 """
 
+
 class ProxyTester(object):
 
     def __init__(self):
@@ -99,8 +100,8 @@ class ProxyTester(object):
             schedule.run_pending()
             time.sleep(1)
 
+
 if __name__ == '__main__':
     # pt = ProxyTester()
     # pt.run()
     ProxyTester.start()
-

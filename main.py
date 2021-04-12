@@ -22,6 +22,7 @@ from core.proxy_api import ProxyApi
 
 """
 
+
 def run():
     # 1. 定义一个列表, 用于存储要启动的进程
     process_list = []
@@ -41,6 +42,7 @@ def run():
     # 6. 遍历进程列表, 让主进程等待子进程的完成
     for process in process_list:
         process.join()
+
 
 if __name__ == '__main__':
     run()

@@ -23,6 +23,7 @@ from domain import Proxy
     如果 https://httpbin.org/get 发送请求可以成功, 说明支持https协议
 """
 
+
 def check_proxy(proxy):
     """
     用于检查指定 代理IP 响应速度, 匿名程度, 支持协议类型
@@ -32,8 +33,8 @@ def check_proxy(proxy):
 
     # 准备代理IP字典
     proxies = {
-        'http':'http://{}:{}'.format(proxy.ip, proxy.port),
-        'https':'https://{}:{}'.format(proxy.ip, proxy.port),
+        'http': 'http://{}:{}'.format(proxy.ip, proxy.port),
+        'https': 'https://{}:{}'.format(proxy.ip, proxy.port),
     }
 
     # 测试该代理IP

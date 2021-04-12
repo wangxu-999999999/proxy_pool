@@ -36,6 +36,7 @@ from settings import RUN_SPIDERS_INTERVAL
     4.3 使用schedule模块, 每隔一定的时间, 执行当前对象的run方法
 """
 
+
 class RunSpider(object):
 
     def __init__(self):
@@ -59,7 +60,6 @@ class RunSpider(object):
             spider = cls()
             # print(spider)
             yield spider
-
 
     def run(self):
         # 2.1 根据配置文件信息, 获取爬虫对象列表.
@@ -104,6 +104,7 @@ class RunSpider(object):
         while True:
             schedule.run_pending()
             time.sleep(1)
+
 
 if __name__ == '__main__':
     # rs = RunSpider()

@@ -5,13 +5,14 @@ import logging
 # 导入settings中日志配置信息
 from settings import LOG_FMT, LOG_DATEFMT, LOG_FILENAME, LOG_LEVEL
 
+
 class Logger(object):
 
     def __init__(self):
         # 1. 获取一个logger对象
         self._logger = logging.getLogger()
         # 2. 设置format对象
-        self.formatter = logging.Formatter(fmt=LOG_FMT,datefmt=LOG_DATEFMT)
+        self.formatter = logging.Formatter(fmt=LOG_FMT, datefmt=LOG_DATEFMT)
         # 3. 设置日志输出
         # 3.1 设置文件日志模式
         self._logger.addHandler(self._get_file_handler(LOG_FILENAME))
@@ -21,16 +22,16 @@ class Logger(object):
         self._logger.setLevel(LOG_LEVEL)
 
     def _get_file_handler(self, filename):
-        '''返回一个文件日志handler'''
+        # 返回一个文件日志handler
         # 1. 获取一个文件日志handler
-        filehandler = logging.FileHandler(filename=filename,encoding="utf-8")
+        file_handler = logging.FileHandler(filename=filename, encoding="utf-8")
         # 2. 设置日志格式
-        filehandler.setFormatter(self.formatter)
+        file_handler.setFormatter(self.formatter)
         # 3. 返回
-        return filehandler
+        return file_handler
 
     def _get_console_handler(self):
-        '''返回一个输出到终端日志handler'''
+        # 返回一个输出到终端日志handler
         # 1. 获取一个输出到终端日志handler
         console_handler = logging.StreamHandler(sys.stdout)
         # 2. 设置日志格式
@@ -41,6 +42,7 @@ class Logger(object):
     @property
     def logger(self):
         return self._logger
+
 
 # 初始化并配一个logger对象，达到单例的
 # 使用时，直接导入logger就可以使用
