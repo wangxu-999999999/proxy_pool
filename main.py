@@ -25,13 +25,14 @@ from core.proxy_api import ProxyApi
 
 def run():
     # 1. 定义一个列表, 用于存储要启动的进程
-    process_list = []
     # 2. 创建 启动爬虫 的进程, 添加到列表中
-    process_list.append(Process(target=RunSpider.start))
     # 3. 创建 启动检测 的进程, 添加到列表中
-    process_list.append(Process(target=ProxyTester.start))
     # 4. 创建 启动提供API服务 的进程, 添加到列表中
-    process_list.append(Process(target=ProxyApi.start))
+    process_list = [
+        Process(target=RunSpider.start),
+        Process(target=ProxyTester.start),
+        Process(target=ProxyApi.start)
+    ]
 
     # 5. 遍历进程列表, 启动所有进程
     for process in process_list:
