@@ -69,7 +69,7 @@ class RunSpider(object):
             #  2.5 处理异常, 防止一个爬虫内部出错了, 影响其他的爬虫.
             # 3.3 使用异步执行这个方法
             # self.__execute_one_spider_task(spider)
-            self.coroutine_pool.apply_async(self.__execute_one_spider_task,args=(spider, ))
+            self.coroutine_pool.apply_async(self.__execute_one_spider_task, args=(spider, ))
 
         # 3.4 调用协程的join方法, 让当前线程等待 协程 任务的完成.
         self.coroutine_pool.join()
